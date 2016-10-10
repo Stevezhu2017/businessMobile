@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta charset="utf-8">
+<title>需求列表</title>
+<link href="css/comm.css" type="text/css" rel="stylesheet">
+<link href="css/diffent.css" type="text/css" rel="stylesheet">
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+$(function(){
+	//防止分类文字过多
+	var fltextw=$('.fl_text_main li').width();
+	var mainw=$('.fl_text_main').width();
+	$('.fl_text_main li').each(function(i,e){
+		var liaw=$('.fl_text_main li a').eq(i).width();
+		if(liaw > fltextw && liaw < fltextw*2+mainw*0.013){
+			$('.fl_text_main li').eq(i).css('width',fltextw*2+mainw*0.013+'px');
+		}else if(liaw > fltextw*2+mainw*0.013&& liaw < fltextw*3+mainw*0.026){
+			$('.fl_text_main li').eq(i).css('width',fltextw*3+mainw*0.026+'px');
+		}else if(liaw > fltextw*3+mainw*0.026){
+			$('.fl_text_main li').eq(i).css({
+				'width':fltextw*3+mainw*0.026+'px',
+				'overflow':'hidden',
+				'text-overflow':'ellipsis'
+			});
+		}
+	})
+	
+	$('.fl_main').hide();
+	$('.fl_main').eq(0).show();
+	$('.fl_nav li').click(function(){
+		var n=$('.fl_nav li').index(this);
+		$('.fl_nav li').removeClass('lihover');
+		$(this).addClass('lihover');
+		$('.fl_main').hide();
+		$('.fl_main').eq(n).show();
+	});
+	
+	$('.top_nav').click(function(){
+		$('.scroll_box, .box_nav').fadeIn(500);
+	});
+	$('.scroll_box, .box_nav').click(function(){
+		$('.scroll_box, .box_nav').fadeOut(500);	
+	});
+})
+</script>
+<head>
+
+<body>
+<!-----------nav-------------->
+<div class="scroll_box"></div>
+<div class="box_nav">
+    <ul>
+        <li><a href="fenlei.html"><img src="images/nav01.jpg"><p>产品分类</p></a></li>
+        <li><a href="#"><img src="images/nav02.jpg"><p>隐私申明</p></a></li>
+        <li><a href="#"><img src="images/nav03.jpg"><p>我的订单</p></a></li>
+        <li><a href="#"><img src="images/nav04.jpg"><p>会员中心</p></a></li>
+    </ul>
+    <ul>
+        <li><a href="#"><img src="images/nav05.jpg"><p>最新公告</p></a></li>
+        <li><a href="#"><img src="images/nav06.jpg"><p>入驻商家</p></a></li>
+        <li><a href="#"><img src="images/nav07.jpg"><p>购物车</p></a></li>
+        <li><a href="#"><img src="images/nav08.jpg"><p>客户端</p></a></li>
+    </ul>
+</div>
+
+<div class="top_tit">
+	<div class="black"><a href="index.html"><img src="images/p_head_returnbtn.png"></a></div>
+	<div class="top_nav"><img src="images/fenlei.png"></div>
+	<div class="title">需求列表</div>
+</div>
+<!--information_main-->
+<ul class="shop">
+	<li>
+		<a href="">
+			<div class="shopP clearfix">
+				<p class="shopImg"><img src="images/pro.png" alt="pro"></p>
+				<ul class="demandList">
+					<li>求购高品质3D打印材料</li>
+					<li>2016-7-25 09:52</li>
+					<li>上海信达资产管理有限公司</li>
+				</ul>
+			</div>
+		</a>
+
+	</li>
+	<li>
+		<a href="">
+			<div class="shopP clearfix">
+				<p class="shopImg"><img src="images/pro.png" alt="pro"></p>
+				<ul class="demandList">
+					<li>求购高品质3D打印材料</li>
+					<li>2016-7-25 09:52</li>
+					<li>上海信达资产管理有限公司</li>
+				</ul>
+			</div>
+		</a>
+
+	</li>
+	<li>
+		<a href="">
+			<div class="shopP clearfix">
+				<p class="shopImg"><img src="images/pro.png" alt="pro"></p>
+				<ul class="demandList">
+					<li>求购高品质3D打印材料</li>
+					<li>2016-7-25 09:52</li>
+					<li>上海信达资产管理有限公司</li>
+				</ul>
+			</div>
+		</a>
+
+	</li>
+
+</ul>
+<!--分页-->
+<p class="clearfix fenPage" align="center">
+	<a href=""><span>1</span>/2</a>
+	<a href="">下一页</a>
+	<a href="">上一页</a>
+	<a href="">首页</a>
+	<a href="">尾页</a>
+</p>
+
+
+<!--footer-->
+<div class="footer">
+    <div class="footer_nav">
+        <a href="#">登录</a><span>|</span>
+        <a href="#">客户端</a><span>|</span>
+        <a href="#">关于我们</a><span>|</span>
+        <a href="#" onclick="slltop()">返回顶部</a>
+    </div>
+    <div class="footer_text">
+        <p><a href="#">3D打印材料</a> | <a href="#">3D打印设备及零部件</a> | <a href="#">3D点软件</a> | <a href="#">3D点服务</a> | <a href="#">知识产权</a> | <a href="#">帮助中心</a></p>
+        <p>@2016 3D打印商城 所有，并保留所有权利。ICP备案证书号:沪ICP12345678-1号 </p>
+        <p><img src="images/footer_img.jpg"></p>
+    </div>
+</div>
+</body>
+</html>

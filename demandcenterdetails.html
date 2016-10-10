@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta charset="utf-8">
+<title>需求详情</title>
+<link href="css/comm.css" type="text/css" rel="stylesheet">
+<link href="css/diffent.css" type="text/css" rel="stylesheet">
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+$(function(){
+	//防止分类文字过多
+	var fltextw=$('.fl_text_main li').width();
+	var mainw=$('.fl_text_main').width();
+	$('.fl_text_main li').each(function(i,e){
+		var liaw=$('.fl_text_main li a').eq(i).width();
+		if(liaw > fltextw && liaw < fltextw*2+mainw*0.013){
+			$('.fl_text_main li').eq(i).css('width',fltextw*2+mainw*0.013+'px');
+		}else if(liaw > fltextw*2+mainw*0.013&& liaw < fltextw*3+mainw*0.026){
+			$('.fl_text_main li').eq(i).css('width',fltextw*3+mainw*0.026+'px');
+		}else if(liaw > fltextw*3+mainw*0.026){
+			$('.fl_text_main li').eq(i).css({
+				'width':fltextw*3+mainw*0.026+'px',
+				'overflow':'hidden',
+				'text-overflow':'ellipsis'
+			});
+		}
+	})
+	
+	$('.fl_main').hide();
+	$('.fl_main').eq(0).show();
+	$('.fl_nav li').click(function(){
+		var n=$('.fl_nav li').index(this);
+		$('.fl_nav li').removeClass('lihover');
+		$(this).addClass('lihover');
+		$('.fl_main').hide();
+		$('.fl_main').eq(n).show();
+	});
+	
+	$('.top_nav').click(function(){
+		$('.scroll_box, .box_nav').fadeIn(500);
+	});
+	$('.scroll_box, .box_nav').click(function(){
+		$('.scroll_box, .box_nav').fadeOut(500);	
+	});
+})
+</script>
+<head>
+
+<body>
+<!-----------nav-------------->
+<div class="scroll_box"></div>
+<div class="box_nav">
+    <ul>
+        <li><a href="fenlei.html"><img src="images/nav01.jpg"><p>产品分类</p></a></li>
+        <li><a href="#"><img src="images/nav02.jpg"><p>隐私申明</p></a></li>
+        <li><a href="#"><img src="images/nav03.jpg"><p>我的订单</p></a></li>
+        <li><a href="#"><img src="images/nav04.jpg"><p>会员中心</p></a></li>
+    </ul>
+    <ul>
+        <li><a href="#"><img src="images/nav05.jpg"><p>最新公告</p></a></li>
+        <li><a href="#"><img src="images/nav06.jpg"><p>入驻商家</p></a></li>
+        <li><a href="#"><img src="images/nav07.jpg"><p>购物车</p></a></li>
+        <li><a href="#"><img src="images/nav08.jpg"><p>客户端</p></a></li>
+    </ul>
+</div>
+
+<div class="top_tit">
+	<div class="black"><a href="index.html"><img src="images/p_head_returnbtn.png"></a></div>
+	<div class="top_nav"><img src="images/fenlei.png"></div>
+	<div class="title">需求详情</div>
+</div>
+<!--information_main-->
+<div class="main2">
+	<div class="demandBox">
+		<p>求购高品质3D打印材料</p>
+		<p>2016-7-25 09:52 点击:6</p>
+	</div>
+	<div class="demandImg">
+		<img src="images/deimg.png" alt="deimg">
+		<ul class="demandImgDe clearfix">
+			<li>长度:18cm</li>
+			<li>宽度:20cm</li>
+			<li>重量:1kg</li>
+			<li>数量:10</li>
+			<li>价格:1000元以内</li>
+			<li>包装:普通包装</li>
+
+		</ul>
+	</div>
+	<div class="sendBox">
+		<p align="center"><input type="button" value="发送报价 "/></p>
+	</div>
+	<div class="company">
+		<div class="companyContainer">
+			<p class="companyTitle">详细说明</p>
+			<p class="companyDection">北京时间7月23日晚间，2016赛季中超联赛第19轮的一场焦点大战在重庆奥体中心上演重庆力帆主场
+				迎战石家庄永昌。开场仅5分钟，费尔南多制造点球机会，吉利奥蒂主罚命中，凭借这粒进球，力帆1
+				-0小胜永昌。全场超过四万八千名球迷见证了力帆队赢得本场保级大战，而这样的上座率发生在力帆
+				与永昌两只平民球队的比赛中，可谓创造中超历史</p>
+			<p class="companyDection">力帆队重新回到中超大家庭之后主场比赛的上座率一直处在中超前列，球迷人数与比赛关注度与广州、
+				北京等赛区不相上下，而重庆力帆主场与强队的对话更是能够引爆票房，本赛季力帆队首轮主场爆冷
+				击败广州恒大队的比赛就有48855名球迷现场观战，这是本赛季首轮比赛的最高上座率。</p>
+
+		</div>
+
+	</div>
+	<div class="company">
+		<div class="companyContainer">
+			<p class="companyTitle">联系方式</p>
+			<ul class="contanct2">
+				<li>公司:上海信达资产管理有限公司</li>
+				<li>状态:<span class="online">在线 </span> <a href="">发送信件</a>  <a href="">在线交谈</a></li>
+				<li>姓名:徐明(先生)</li>
+				<li>电话:021-64928888</li>
+				<li>地区:上海市-市辖区-闵行区</li>
+				<li>地址:上海市闵行区莘庄地铁站</li>
+			</ul>
+
+
+		</div>
+
+	</div>
+
+
+
+</div>
+
+
+<!--footer-->
+<div class="footer">
+    <div class="footer_nav">
+        <a href="#">登录</a><span>|</span>
+        <a href="#">客户端</a><span>|</span>
+        <a href="#">关于我们</a><span>|</span>
+        <a href="#" onclick="slltop()">返回顶部</a>
+    </div>
+    <div class="footer_text">
+        <p><a href="#">3D打印材料</a> | <a href="#">3D打印设备及零部件</a> | <a href="#">3D点软件</a> | <a href="#">3D点服务</a> | <a href="#">知识产权</a> | <a href="#">帮助中心</a></p>
+        <p>@2016 3D打印商城 所有，并保留所有权利。ICP备案证书号:沪ICP12345678-1号 </p>
+        <p><img src="images/footer_img.jpg"></p>
+    </div>
+</div>
+</body>
+</html>
